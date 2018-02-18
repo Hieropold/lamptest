@@ -11,7 +11,7 @@ Build
 ```
 npm install
 bower install
-gulp
+ionic cordova android build --release --prod
 ```
 
 TODO
