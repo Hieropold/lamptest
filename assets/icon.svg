@@ -14,9 +14,9 @@
    version="1.1"
    inkscape:version="0.48.4 r9939"
    sodipodi:docname="icon.svg"
-   inkscape:export-filename="/home/ink/projects/LampTest/src/assets/icon-opaque.png"
-   inkscape:export-xdpi="90"
-   inkscape:export-ydpi="90">
+   inkscape:export-filename="/home/ink/devel/lamptest/src/assets/icon-1024.png"
+   inkscape:export-xdpi="480"
+   inkscape:export-ydpi="480">
   <metadata
      id="metadata20752">
     <rdf:RDF>
@@ -47,7 +47,7 @@
      inkscape:zoom="2.0000001"
      inkscape:cx="100.91407"
      inkscape:cy="23.136566"
-     inkscape:window-x="1917"
+     inkscape:window-x="-3"
      inkscape:window-y="32"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg20180" />
@@ -234,7 +234,7 @@
        sodipodi:cy="41.162365"
        sodipodi:rx="10.676528"
        sodipodi:ry="10.129013"
-       d="m 42.487105,41.162365 a 10.676528,10.129013 0 1 1 -21.353056,0 10.676528,10.129013 0 1 1 21.353056,0 z"
+       d="m 42.487105,41.162365 c 0,5.594099 -4.780044,10.129013 -10.676528,10.129013 -5.896483,0 -10.676528,-4.534914 -10.676528,-10.129013 0,-5.594099 4.780045,-10.129013 10.676528,-10.129013 5.896484,0 10.676528,4.534914 10.676528,10.129013 z"
        transform="matrix(2.7585091,0,0,2.8821689,-37.298466,-119.04215)" />
   </g>
   <g
@@ -251,7 +251,7 @@
        sodipodi:cy="32.675892"
        sodipodi:rx="20.203276"
        sodipodi:ry="20.258026"
-       d="m 68.001268,32.675892 a 20.203276,20.258026 0 1 1 -40.406551,0 20.203276,20.258026 0 1 1 40.406551,0 z"
+       d="m 68.001268,32.675892 c 0,11.188199 -9.045314,20.258026 -20.203275,20.258026 -11.157961,0 -20.203276,-9.069827 -20.203276,-20.258026 0,-11.188199 9.045315,-20.258026 20.203276,-20.258026 11.157961,0 20.203275,9.069827 20.203275,20.258026 z"
        transform="matrix(3.3488855,0,0,3.3488855,-56.728464,-150.37427)" />
   </g>
   <g

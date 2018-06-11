@@ -16,9 +16,9 @@
    version="1.1"
    inkscape:version="0.48.4 r9939"
    sodipodi:docname="splash.svg"
-   inkscape:export-filename="/home/ink/projects/LampTest/src/assets/splash.png"
-   inkscape:export-xdpi="90"
-   inkscape:export-ydpi="90">
+   inkscape:export-filename="/home/ink/devel/lamptest/src/assets/splash.png"
+   inkscape:export-xdpi="111.36"
+   inkscape:export-ydpi="111.36">
   <defs
      id="defs4038">
     <linearGradient
@@ -187,14 +187,14 @@
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
      inkscape:zoom="0.31501151"
-     inkscape:cx="667.66913"
+     inkscape:cx="927.69392"
      inkscape:cy="1160.4606"
      inkscape:document-units="px"
      inkscape:current-layer="layer2"
      showgrid="false"
      inkscape:window-width="1920"
      inkscape:window-height="1025"
-     inkscape:window-x="1917"
+     inkscape:window-x="-3"
      inkscape:window-y="32"
      inkscape:window-maximized="1" />
   <metadata
