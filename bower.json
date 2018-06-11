@@ -1,7 +1,0 @@
-{
-  "name": "LampTest",
-  "private": "true",
-  "dependencies": {
-    "moment": "^2.17.1"
-  }
-}

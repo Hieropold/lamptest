@@ -3,7 +3,7 @@ import { NavController } from 'ionic-angular';
 import { LampPage } from '../lamp/lamp';
 import { LampData } from '../../providers/lamp-data';
 import { FormControl } from '@angular/forms';
-import { Splashscreen } from 'ionic-native';
+import { SplashScreen } from '@ionic-native/splash-screen';
 import 'rxjs/add/operator/debounceTime';
 
 @Component({
@@ -17,7 +17,7 @@ export class ListPage {
   public searchTerm: string = '';
   public searchControl: FormControl;
 
-  constructor(public navCtrl: NavController, private lampData: LampData) {
+  constructor(public navCtrl: NavController, private lampData: LampData, private splashScreen: SplashScreen) {
     this.lamps = this.lampData.getList(null);
 
     this.searchControl = new FormControl();
@@ -35,7 +35,7 @@ export class ListPage {
   }
 
   ionViewDidEnter() {
-    Splashscreen.hide();
+    this.splashScreen.hide();
   }
 
   lampClicked(upc: string, offset: number) {
