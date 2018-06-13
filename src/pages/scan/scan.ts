@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-
 import { Platform, ToastController, PopoverController, NavController } from 'ionic-angular';
+import { BarcodeScanner } from "@ionic-native/barcode-scanner";
+
 import { LampPage } from '../lamp/lamp';
 import { LampData } from '../../providers/lamp-data';
 import { LampsSelectorPage } from '../lamps-selector/lamps-selector';
@@ -17,7 +18,8 @@ export class ScanPage {
               public lampData: LampData,
               private toastCtrl: ToastController,
               private popoverCtrl: PopoverController,
-              private navCtrl: NavController) {
+              private navCtrl: NavController,
+              private barcodeScanner: BarcodeScanner) {
 
   }
 
@@ -26,71 +28,71 @@ export class ScanPage {
   }
 
   scan() {
-    let ctrl = this;
+    const ctrl = this;
 
     this.platform.ready()
       .then(function () {
-        if (typeof cordova === 'undefined' || !cordova.plugins || !cordova.plugins.barcodeScanner) {
-          return ctrl.barcodeScannerNotAvailable();
-        }
+        ctrl.barcodeScanner.scan().then(result => {
+          console.log('Barcode data', result);
 
-        cordova.plugins.barcodeScanner.scan(
-          function (result) {
-            if (result && result.cancelled) {
-              ctrl.navCtrl.parent.select(2);
-            }
+          if (result && result.cancelled) {
+            ctrl.navCtrl.parent.select(2);
+          }
 
-            if (result && result.text && !result.cancelled) {
-              if (ctrl.lampData.areLampsAvailableByUpc(result.text)) {
-                let lamps = ctrl.lampData.getLampsByUpc(result.text);
-                if (lamps.length === 1) {
-                  ctrl.navCtrl.push(LampPage, {upc: result.text, offset: 0});
-                }
-                else {
-                  // Present a popover with a list of found lamps
-                  let lampsSelector = ctrl.popoverCtrl.create(LampsSelectorPage, {lamps: lamps});
-                  lampsSelector.onDidDismiss((selected) => {
-                    ctrl.navCtrl.push(LampPage, {upc: selected.upc, offset: selected.offset});
-                  });
-                  lampsSelector.present();
-                }
+          if (result && result.text && !result.cancelled) {
+            if (ctrl.lampData.areLampsAvailableByUpc(result.text)) {
+              let lamps = ctrl.lampData.getLampsByUpc(result.text);
+              if (lamps.length === 1) {
+                ctrl.navCtrl.push(LampPage, {upc: result.text, offset: 0});
               }
               else {
-                // Switch to lamps tab
-                ctrl.navCtrl.parent.select(2);
-
-                let toast = ctrl.toastCtrl.create({
-                  message: 'Лампа с таким штрих-кодом не найдена',
-                  position: 'middle',
-                  showCloseButton: true,
-                  closeButtonText: 'X'
+                // Present a popover with a list of found lamps
+                let lampsSelector = ctrl.popoverCtrl.create(LampsSelectorPage, {lamps: lamps});
+                lampsSelector.onDidDismiss((selected) => {
+                  ctrl.navCtrl.push(LampPage, {upc: selected.upc, offset: selected.offset});
                 });
-
-                toast.present();
+                lampsSelector.present();
               }
             }
-          },
-          function (error) {
-            if (error === 'Illegal access') {
-              return ctrl.insufficientPermissions();
+            else {
+              // Switch to lamps tab
+              ctrl.navCtrl.parent.select(2);
+
+              let toast = ctrl.toastCtrl.create({
+                message: 'Лампа с таким штрих-кодом не найдена',
+                position: 'middle',
+                showCloseButton: true,
+                closeButtonText: 'X'
+              });
+
+              toast.present();
             }
-
-            // Unknown error
-            console.log('Barcode scanner error: ' + JSON.stringify(error));
-
-            // Switch to lamps list
-            ctrl.navCtrl.parent.select(2);
-
-            let toast = ctrl.toastCtrl.create({
-              message: 'Ошибка сканирования штрих-кода',
-              position: 'middle',
-              showCloseButton: true,
-              closeButtonText: 'X'
-            });
-
-            toast.present();
           }
-        );
+
+        }).catch(err => {
+          if (err === 'Illegal access') {
+            return ctrl.insufficientPermissions();
+          }
+
+          if (err === 'cordova_not_available') {
+            return ctrl.barcodeScannerNotAvailable();
+          }
+
+          // Unknown error
+          console.log('Barcode scanner error: ' + JSON.stringify(err));
+
+          // Switch to lamps list
+          ctrl.navCtrl.parent.select(2);
+
+          let toast = ctrl.toastCtrl.create({
+            message: 'Ошибка сканирования штрих-кода',
+            position: 'middle',
+            showCloseButton: true,
+            closeButtonText: 'X'
+          });
+
+          toast.present();
+        });
       });
   }
 

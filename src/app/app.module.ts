@@ -1,6 +1,11 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { BarcodeScanner } from "@ionic-native/barcode-scanner";
+
 import { LampTest } from './app.component';
 
 import { AboutPage } from '../pages/about/about';
@@ -11,9 +16,6 @@ import { LampsSelectorPage } from '../pages/lamps-selector/lamps-selector';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { LampData } from '../providers/lamp-data';
-
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
 
 @NgModule({
   declarations: [
@@ -42,8 +44,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
+    BarcodeScanner,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     LampData
   ]
 })
-export class AppModule {}
+export class AppModule {
+}
