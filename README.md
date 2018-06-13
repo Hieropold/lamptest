@@ -16,7 +16,6 @@ ionic cordova android build --release --prod
 
 TODO
 ----
-* Sort out upgrade issues after migrating to latest Ionic.
 * Add search by barcode
 * Add new content from lamptest (https://geektimes.ru/company/lamptest/blog/286460/)
 * Add support for other lamp types (CFL and incandescent, see 0043168179386 and 4895041412655)
