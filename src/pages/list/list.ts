@@ -28,7 +28,7 @@ export class ListPage {
   }
 
   ionViewDidLoad() {
-    this.searchControl.valueChanges.debounceTime(200).subscribe(search => {
+    this.searchControl.valueChanges.debounceTime(300).subscribe(search => {
       this.updateLampsList(search);
       this.isSearchInProgress = false;
     });
