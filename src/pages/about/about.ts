@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 
-import { NavController } from 'ionic-angular';
+import * as moment from 'moment';
 
 declare let data: any;
-declare let moment: any;
 
 @Component({
   selector: 'page-about',
@@ -14,7 +13,7 @@ export class AboutPage {
   totalLamps: number;
   latestUpdate: any;
 
-  constructor(public navCtrl: NavController) {
+  constructor() {
     this.totalLamps = 0;
     this.latestUpdate = moment('1970-01-01');
 
