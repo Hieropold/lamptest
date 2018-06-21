@@ -6,8 +6,6 @@ import { LampPage } from '../lamp/lamp';
 import { LampData } from '../../providers/lamp-data';
 import { LampsSelectorPage } from '../lamps-selector/lamps-selector';
 
-declare let cordova: any;
-
 @Component({
   selector: 'page-scan',
   templateUrl: 'scan.html'
