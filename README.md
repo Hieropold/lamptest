@@ -24,7 +24,6 @@ TODO
 * Add lamp rating to the list, near the lamp title.
 * Update lamps dynamically.
 * Move values representation logic to the lamp template from lamp model.
-* Replace stock WebView with Crosswalk.
 * On Android 6 the app reports that barcode is not supported before it asks for permission to use camera
 * Add sorting by lamp rating
 * Add lamps without UPC to the lamps list
