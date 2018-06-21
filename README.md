@@ -13,6 +13,13 @@ npm install
 ionic cordova android build --release --prod
 ```
 
+Update lamps DB
+---------------
+
+```
+npm run update-db
+```
+
 TODO
 ----
 * Add search by barcode
