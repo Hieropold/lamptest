@@ -10,7 +10,6 @@ Build
 
 ```
 npm install
-bower install
 ionic cordova android build --release --prod
 ```
 
