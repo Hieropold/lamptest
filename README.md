@@ -5,19 +5,29 @@ A PhoneGap-based mobile application for scanning lamp barcode and getting useful
 
 It uses [LampTest](http://lamptest.ru) site as a data source.
 
+Install
+-------
+```
+$ npm install
+```
+
+Debug
+-----
+```
+$ npm start
+```
+App will be available at localhost:4200.
+
 Build
 -----
-
 ```
-npm install
-ionic cordova android build --release --prod
+$ ionic cordova android build --release --prod
 ```
 
 Update lamps DB
 ---------------
-
 ```
-npm run update-db
+$ npm run update-db
 ```
 
 TODO
