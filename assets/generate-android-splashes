@@ -1,6 +1,0 @@
-#!/bin/bash
-
-# Put splash.png into resources folder in the root of Cordova project
-
-cd ..
-ionic resources android --splash

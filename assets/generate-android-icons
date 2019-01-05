@@ -1,8 +1,0 @@
-#!/bin/bash
-
-# Create resources folder in the root of Cordova project
-# Put icon.png into resources folder
-# After android icons are generated the original icon can be removed
-
-cd ..
-ionic resources android --icon
