@@ -1,1 +1,11 @@
-
+.spinner-container {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  background-color: white;
+  border: {
+    bottom: 1px solid lightgrey;
+  }
+  z-index: 1;
+}
