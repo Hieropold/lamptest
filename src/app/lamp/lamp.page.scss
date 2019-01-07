@@ -1,37 +1,35 @@
-page-lamp {
-  .lamp-details {
-    padding-left: 10px;
-    padding-right: 10px;
+.lamp-details {
+  padding-left: 10px;
+  padding-right: 10px;
 
-    .data-source {
-      font-size: 0.9em;
-      padding-top: 10px;
+  .data-source {
+    font-size: 0.9em;
+    padding-top: 10px;
+  }
+
+  table {
+    width: 100%;
+
+    tr:nth-child(even) {
+      background-color: aliceblue;
     }
 
-    table {
-      width: 100%;
+    tr.header {
+      font-weight: bold;
+      background-color: #FFD95D;
+    }
 
-      tr:nth-child(even) {
-        background-color: aliceblue;
-      }
+    tr.section-last {
+      vertical-align: top;
+      height: 50px;
+    }
 
-      tr.header {
-        font-weight: bold;
-        background-color: #FFD95D;
-      }
+    td {
+      padding: 4px;
+    }
 
-      tr.section-last {
-        vertical-align: top;
-        height: 50px;
-      }
-
-      td {
-        padding: 4px;
-      }
-
-      td.better {
-        color: green;
-      }
+    td.better {
+      color: green;
     }
   }
 }
