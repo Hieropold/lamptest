@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
+// import { NavController } from "@ionic/angular";
 // import { NavController } from 'ionic-angular';
 //import { LampPage } from '../lamp/lamp';
 import { LampData } from '../../providers/lamp-data';
+import { Router } from '@angular/router';
 //import { FormControl } from '@angular/forms';
 //import { SplashScreen } from '@ionic-native/splash-screen';
 // import 'rxjs/add/operator/debounceTime';
@@ -19,7 +21,7 @@ export class ListPage {
   // public searchControl: FormControl;
 
   // constructor(public navCtrl: NavController, private lampData: LampData, private splashScreen: SplashScreen) {
-  constructor(private lampData: LampData) {
+  constructor(private router: Router, private lampData: LampData) {
     this.lamps = this.lampData.getList(null);
 
     // this.searchControl = new FormControl();
@@ -40,9 +42,12 @@ export class ListPage {
   //   this.splashScreen.hide();
   // }
 
-  // lampClicked(upc: string, offset: number) {
-  //   this.navCtrl.push(LampPage, {upc: upc, offset: offset});
-  // }
+  lampClicked(upc: string, offset: number) {
+    // this.navCtrl.push(LampPage, {upc: upc, offset: offset});
+    console.log(upc, offset);
+
+    this.router.navigate(['/lamp', upc, offset]);
+  }
 
   // private updateLampsList(searchString: string) {
   //   this.lamps = this.lampData.getList(searchString);
