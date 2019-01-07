@@ -43,9 +43,6 @@ export class ListPage {
   // }
 
   lampClicked(upc: string, offset: number) {
-    // this.navCtrl.push(LampPage, {upc: upc, offset: offset});
-    console.log(upc, offset);
-
     this.router.navigate(['/lamp', upc, offset]);
   }
 
