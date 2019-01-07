@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Список ламп
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!--<div *ngIf="isSearchInProgress" class="spinner-container">-->
+    <!--<ion-spinner></ion-spinner>-->
+  <!--</div>-->
+
+  <ion-list>
+    <button ion-item *ngFor="let lamp of lamps" (click)="lampClicked(lamp.upc, lamp.offset)">
+      {{lamp.title}}
+    </button>
+  </ion-list>
+</ion-content>
+
+<!--<ion-footer>-->
+  <!--<ion-toolbar>-->
+    <!--<ion-searchbar [(ngModel)]="searchTerm" [formControl]="searchControl" (ionInput)="onSearchInput()"-->
+                   <!--placeholder="Поиск"></ion-searchbar>-->
+  <!--</ion-toolbar>-->
+<!--</ion-footer>-->
