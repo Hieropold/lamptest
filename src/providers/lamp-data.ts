@@ -41,6 +41,10 @@ export class LampData {
     }
   }
 
+  getTotalCount() {
+    return this.list.length;
+  }
+
   getList(keyword: any) {
     if (typeof keyword === 'string' && keyword.length) {
       let normalizedKeyword = keyword.toLowerCase();
