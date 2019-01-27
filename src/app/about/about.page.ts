@@ -8,9 +8,10 @@ import { LampData } from "../../providers/lamp-data";
 })
 export class AboutPage {
   public totalLamps = 0;
-  public latestUpdate = '1970-01-01';
+  public latestUpdate = '';
 
   constructor(private lampData: LampData) {
     this.totalLamps = this.lampData.getTotalCount();
+    this.latestUpdate = this.lampData.getLatestUpdateString();
   }
 }
