@@ -12,9 +12,11 @@
   <!--</div>-->
 
   <ion-list>
-    <button ion-item *ngFor="let lamp of lamps" (click)="lampClicked(lamp.upc, lamp.offset)">
-      {{lamp.title}}
-    </button>
+    <ion-item *ngFor="let lamp of lamps">
+      <ion-label (click)="lampClicked(lamp.upc, lamp.offset)">
+        {{lamp.title}}
+      </ion-label>
+    </ion-item>
   </ion-list>
 </ion-content>
 
